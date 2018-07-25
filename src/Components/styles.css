@@ -1,23 +1,23 @@
 .bodyExemplar {
-  width: 150px;
-  height: 250px;
-  background-color: orange; }
+  background-color: orange;
+}
+
+.bodyExemplar img {
+  height: 200px;
+}
 
 #root {
   width: 80%;
   position: center;
-  float: right; }
+  float: right;
+}
 
 .example {
-
   width: 80%;
   position: center;
   float: right;
-
 }
 
 Exemplar {
-
 	float: right;
-
 }
