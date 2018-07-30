@@ -1,4 +1,5 @@
 import React, {Component} from 'react'; 
+import Button             from './Button'
 												// import {render} from 'react-dom';
 												// import Components from "./ExemplarListComponent";
 												// import List  from "./listForExemplars";
@@ -6,30 +7,36 @@ import React, {Component} from 'react';
 
 class Exemplar extends Component {  	 		//Created new class "Exemplar"
 
-	state = {									//Declare new state
-
+	state = {
+										//Declare new state
 		isOpen : true	
+
 	}
 
-	render () {     							//Declare method render for component
 
+	render () {     							//Declare method render for component
 		const {component} = this.props;
-		const description = this.state.isOpen && <p>{component.description}</p>  
+		const description = this.state.isOpen && <p>{component.description}</p>;
+		const btn         = !this.state.isOpen && <Button/>
 		const cost        =  <p>{component.cost}</p>
 		const id          =  <p>{component.id}</p>
-
+		
 		return(	
 			
-			<div className = "bodyExemplar">
+			<div className = 'bodyExemplar'>
 			
 					{id}
-					<img src = {component.img} onClick = {this.handleClick}/>
+					<img src={component.img} onClick={this.handleClick}/>
 					{description}
+					{btn}
 					{cost}
 			
 			</div>)
 
 	}
+
+
+
 
 	handleClick = () => {
 
