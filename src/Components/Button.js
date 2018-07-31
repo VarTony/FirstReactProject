@@ -5,7 +5,7 @@ import React, {Component} from 'react'
 class Button extends Component {
 
 
-	newState = {
+	state = {
 
 		isClick: true
 	
@@ -16,7 +16,7 @@ class Button extends Component {
 		return(
 
 			<button type = 'button' id='btn'  onClick={this.changeText}>
-				{this.isClick ? 'Add to card': 'Delete from card'}
+				{this.state.isClick ? 'Add to card': 'Delete from card'}
 			</button> 					
 		
 		) 
@@ -26,7 +26,7 @@ class Button extends Component {
 		
 		this.setState({
 
-			isClick: !this.newState.isClick
+			isClick: !this.state.isClick
 		})
 	}
 
