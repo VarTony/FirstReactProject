@@ -1,54 +1,38 @@
-import React, {Component} from 'react'; 
-import Button             from './Button'
-												// import {render} from 'react-dom';
-												// import Components from "./ExemplarListComponent";
-												// import List  from "./listForExemplars";
+import React, {Component} from 'react'
+import Button from './Button'
+// import {render} from 'react-dom'
+// import Components from './ExemplarListComponent'
+// import List  from './listForExemplars'
 
-
-class Exemplar extends Component {  	 		//Created new class "Exemplar"
-
+// Created new class 'Exemplar'
+class Exemplar extends Component {
+	// Declare new state
 	state = {
-										//Declare new state
-		isOpen : true	
-
+		isOpen : true
 	}
-
-
-	render () {     							//Declare method render for component
-		const {component} = this.props;
-		const description = this.state.isOpen && <p>{component.description}</p>;
-		const btn         = !this.state.isOpen && <Button/>
-		const cost        =  <p>{component.cost}</p>
-		const id          =  <p>{component.id}</p>
-		
-		return(	
-			
-			<div className = 'bodyExemplar'>
-			
-					{id}
-					<img src={component.img} onClick={this.handleClick}/>
-					{description}
-					{btn}
-					{cost}
-			
-			</div>)
-
-	}
-
-
-
 
 	handleClick = () => {
-
 		this.setState({
-
-				isOpen: !this.state.isOpen 		//this is handler for constant "p";
-
+			// this is handler for constant 'p'
+			isOpen: !this.state.isOpen
 		})
-
 	}
 
+	// Declare method render for component
+	render () {
+		const {component} = this.props
+
+		return(
+			<div className='bodyExemplar'>
+				<p>{component.id}</p>
+				<img src={component.img} onClick={this.handleClick} />
+
+				{this.state.isOpen && <p>{component.description}</p>}
+				{!this.state.isOpen && <Button/>}
+				<p>{component.cost}</p>
+			</div>
+		)
+	}
 }
 
-
-export default Exemplar;
+export default Exemplar

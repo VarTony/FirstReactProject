@@ -1,5 +1,5 @@
-import React     from 'react' 
-import Exemplar  from './Exemplar'
+import React from 'react'
+import Exemplar from './Exemplar'
 import './styles.css'
 
 const Exemple = ({ListForExemplars}) => {
@@ -8,10 +8,10 @@ const Exemple = ({ListForExemplars}) => {
 	)
 
 	return(
-		<div className = 'Example' >
+		<div className='Example'>
 			{value}
 		</div>
 	)
 }
 
-export default Exemple;
+export default Exemple

@@ -78,5 +78,4 @@ export default [
 		cost        :  "Cost : " + (+(Math.random() * (10000 - 1) + 1)).toFixed(2)
 
 	}
-
 ]
